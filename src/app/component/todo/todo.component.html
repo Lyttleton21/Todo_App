@@ -1,14 +1,15 @@
-<li class="list-group-item">
+<li class="list-group-item" [ngClass]="this.isCompleted ? 'text-danger' : ''">
     <div class="row">
         <div class="d-inline col">
-            <input type="checkbox" class="form-check">
+            <input type="checkbox" class="form-check" (change)="complete()">
             <label class="form-label-label lead">{{todoInput.title | titlecase}}</label>
         </div>
         <div class="text-end col align-self-center">
             <span class="mx-3">{{todoInput.createdAt | date}}</span>
             <i class="fa fa-heart mx-3 btn" [ngClass]="this.todoInput.isFavourite ? 'text-danger' : ''"
             title="favourite" (click)="updateFavourite()"></i>
-            <button class="btn btn-danger btn-sm" title="delete">
+            <button class="btn btn-danger btn-sm"
+             title="delete" (click)="deleteTodo()">
                 <i class="fa fa-trash-o"></i>
             </button>
         </div>

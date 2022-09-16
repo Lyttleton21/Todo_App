@@ -9,6 +9,7 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class TodoComponent implements OnInit {
   @Input() todoInput!: Todo;
+  isCompleted: boolean = false;
 
   constructor(private todoService:TodoService) { }
 
@@ -27,6 +28,19 @@ export class TodoComponent implements OnInit {
       this.todoService.fav.splice(index, 1)
       localStorage.setItem("favourite", JSON.stringify(this.todoService.fav));
       alert(`${this.todoInput.title} has been remove from favourite`);
+    }
+  }
+
+  deleteTodo(){
+    this.todoService.deleteTodo(this.todoInput);
+    alert(`${this.todoInput.title} has been deleted successfully`);
+  }
+
+
+  complete(){
+    this.isCompleted = !this.isCompleted;
+    if(this.isCompleted){
+      alert(`${this.todoInput.title} is completed`);
     }
   }
 
