@@ -1,0 +1,18 @@
+<div class="card shadow" *ngIf="viewList">
+    <h5 class="card-header">My TODO-LIST</h5>
+    <div class="card-body">
+        <ul class="list-group" *ngFor="let todo of allTodo">
+            <app-todo [todoInput]="todo"></app-todo>
+        </ul>
+    </div>
+</div>
+
+<!--Favourite todo list-->
+<div class="card shadow" *ngIf="!viewList">
+    <h5 class="card-header">My TODO-LIST</h5>
+    <div class="card-body">
+        <ul class="list-group" *ngFor="let todo of allTodo">
+            <app-todo [todoInput]="todo"></app-todo>
+        </ul>
+    </div>
+</div>

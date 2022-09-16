@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Add New Task</h5>
+        <form class="form-inline" #addTodo="ngForm" (submit)="save()">
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" 
+                name="todo" [(ngModel)]="todo"
+                 placeholder="Add Task" required>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">
+                Add Task
+            </button>
+        </form>
+    </div>
+</div>

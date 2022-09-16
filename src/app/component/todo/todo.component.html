@@ -1,0 +1,15 @@
+<li class="list-group-item">
+    <div class="row">
+        <div class="d-inline col">
+            <input type="checkbox" class="form-check">
+            <label class="form-label-label lead">{{todoInput.title | titlecase}}</label>
+        </div>
+        <div class="text-end col align-self-center">
+            <span class="mx-3">{{todoInput.createdAt | date}}</span>
+            <i class="fa fa-heart mx-3 btn" title="favourite" ></i>
+            <button class="btn btn-danger btn-sm" title="delete">
+                <i class="fa fa-trash-o"></i>
+            </button>
+        </div>
+    </div>
+</li>
