@@ -71,7 +71,8 @@ export class TodoService {
   }
 
   updateFavourite(){
-    this.fav
+    this.fav = JSON.parse(localStorage.getItem('favourite') || `{}`)
+    return this.fav;
   }
   
 
